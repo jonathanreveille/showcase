@@ -3,9 +3,9 @@ from .models import Project, Tag
 #from .forms import SearchedProductForms
 
 # Create your views here.
+
 def land_page(request):
     return render(request, 'projects/landing.html')
-
 
 def home(request):
     projects_found = Project.objects.all()
@@ -14,18 +14,12 @@ def home(request):
     }
     return render(request, 'projects/home.html', context)
 
-
 def detail(request, project_pk):
-    project_details = get_object_or_404(Project, pk=project_pk)
+    project = get_object_or_404(Project, pk=project_pk)
     context = {
-        'project': project_details
+        'project': project,
     }
-    return render(request, 'project.detail.html', context)
-
-
-def delete_post(request):
-    pass
+    return render(request, 'projects/detail.html', context)
 
 def search(request):
     pass
-

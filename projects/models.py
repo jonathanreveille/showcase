@@ -12,9 +12,9 @@ class Project(models.Model):
     sub_title = models.CharField(max_length=150, null=True, blank=True)
     body = models.TextField(null=True, blank=True)
     image = models.FilePathField(path="static/img", null=True, blank=True)
-    #image = models.ImageField(upload_to="static/projects/images", null=True, blank=True, default='coming_soon.png')
     created = models.DateTimeField(auto_now_add=True)
     tag = models.ManyToManyField(Tag)
+    repository = models.URLField(max_length=200, null=True, blank=True)
 
     def __str__(self):
         return self.title

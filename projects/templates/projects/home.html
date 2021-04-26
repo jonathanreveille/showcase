@@ -1,9 +1,19 @@
-{% extends "projects/base.html" %}
+{% extends "base.html" %}
 
 {% load static %}
 
 {% block title %} Portfolio Homepage {% endblock title %}
 
+    {% block nav %}
+        <div class="flex-banner">
+            <div class="navigation">
+                <a class="button" href="{% url 'projects:land_page' %}">Intro</a>
+                <a class="button">Search</a>
+                <a class="button">Contact</a>
+            </div>
+        </div>
+    {% endblock nav %}
+    
 {% block content %}
 
             <div class="flex-posts">
@@ -16,18 +26,23 @@
                     </div>
 
                     <div class="post_image">
-                        <img class="image" src="{{project.image}}" width=229px height=235px>
-                        {% comment %} <img class="image" src="{% static project.image %}" width=229px height=235px> {% endcomment %}
-                        {% comment %} <img class="image" src="{% static 'projects/images/liveit.png' %}" width=229px height=235px> {% endcomment %}
+                        <a href="{% url 'projects:detail' project.id %}">
+                        <img class="image-project" src="{{project.image}}">
+                        </a>
                     </div>
                     
-                    <div class=tags>
-                        <h4>Tags</h4>
+                    <div class=div_tags>
+                        {% for tag in project.tag.all %}
+                            <span class="tags">{{ tag }}</span>
+                        {% endfor %}
                     </div>
                     
-                    <div class="body">
-                        <p> Lopsum zkejnrkzjen</p>
+                    <div class="body-container">
+                        <p class="project-body">{{ project.sub_title }}
+                        <span><a class ="click-content" href="{% url 'projects:detail' project.id %}"> More...</a></span></p>
                     </div>
+
+                    
                 </div>
             {% endfor %}
              </div>

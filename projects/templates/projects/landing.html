@@ -1,13 +1,46 @@
-{% extends "projects/base.html" %}
+{% extends "base.html" %}
 
 {% load static %}
 
-{% block title %} Jon's Portfolio {% endblock title %}
+{% block title %} Welcome {% endblock title %}
 
-    {%block content%}
-        <body>
-            <div class="flex-posts">
-                <h1> landing page </h1>  
-                <a href="{% url 'home' %}"> click here to see portfolio</a>  
+    {% block nav %}
+        <div class="flex-banner">
+            <div class="navigation">
+                <a class="button" href="{% url 'projects:home' %}">Portfolio</a>
+                <a href="" class="button">Search</a>
+                <a href="" class="button">Contact</a>
             </div>
+        </div>
+    {% endblock nav %}
+    
+    {%block content%}
+
+    <div class="flex-intro">
+        <h1>Hello, my name is Jon</h1>
+            <div class="intro-post">
+                    <p><br/>
+                    If you are here, your curiosity brought you here. And I am glad that you are here !
+                    Here's a bunch of projects I have achieved within the last two year.
+                    <br/><br/>
+                    Today, my goal, as a developer, is to find
+                    a role in a company as a junior python developer.
+                    <br/></p>
+
+                    <div class="center-button">
+                        <a href="#contact" class="contact-button"> Contact me ! </a>
+                    </div>
+                    
+                </div>
+            </div>
+
+    <div class="flex-intro">
+        <div class="latest_updates">
+            <h3> Last updated posts in portfolios </h3>
+        </div>
+        <div class="intro-post">
+            <img src="">
+        </div>
+    </div>
+
     {%endblock content%}

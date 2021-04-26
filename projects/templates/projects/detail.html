@@ -1,12 +1,31 @@
-{% extends "projects/base.html" %}
+{% extends "base.html" %}
 
 {% load static %}
 
-{% block title %} Jon's Portfolio {% endblock title %}
+{% block title %} Project detail {% endblock title %}
 
 {%block content%}
-        <body>
+
             <div class="flex-posts">
-                <h1> Detail of a project </h1>  
+            
+                {% if project %}
+
+                <div class="photo-detail-container">
+                    <img class="image-detail-project" src="{{project.image}}">
+                </div>
+
+                <div class="title-detail-container">
+                    <h1 class="title-detail-area">{{project.title}}</h1>
+                    <h3 class="sub_title-detail-area">{{project.sub_title}}</h3>
+                    <p class="body-detail-area">{{project.body}}</p>
+                    <br/>
+                    <span><a class ="click-content" href="https://github.com/jonathanreveille/Live_it_Web_app_for_artist" alt="Github" target="_blank">Voir le repo</a></span>
+                    <span><a class ="click-content" href="{% url 'projects:home' %}">Retour projets</a></span>
+                </div>
+                
+                {% endif %}
             </div>
-     {%endblock content%}
+
+           
+
+{% endblock content %}
