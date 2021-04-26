@@ -21,6 +21,9 @@ from projects import views as project_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', TemplateView.as_view(template_name='projects/landing.html'), name='landing'),
-    path('home/', project_views.project_home, name="home"),
+    path('', include('projects.urls')),
 ]
+
+    # path('', TemplateView.as_view(template_name='projects/landing.html'), name='landing'),
+    # path('home/', include('projects.urls')),
+    # path('home/', project_views.project_home, name="home"),

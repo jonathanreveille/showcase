@@ -16,8 +16,9 @@
                     </div>
 
                     <div class="post_image">
-                        <img class="image" src="{{project.image.url}}" width=229px height=235px>
-                        {% comment %} <img class="image" src="{% static 'projects/images/mg3.png' %}" width=229px height=235px> {% endcomment %}
+                        <img class="image" src="{{project.image}}" width=229px height=235px>
+                        {% comment %} <img class="image" src="{% static project.image %}" width=229px height=235px> {% endcomment %}
+                        {% comment %} <img class="image" src="{% static 'projects/images/liveit.png' %}" width=229px height=235px> {% endcomment %}
                     </div>
                     
                     <div class=tags>

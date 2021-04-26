@@ -1,22 +1,23 @@
 <!DOCTYPE  html>
+
 {% load static %}
-<!-- type du fichier -->
 
 <html lang="en">
 
     {%block head%}
         <head>
             <meta charset="utf-8" />
-            <link rel="stylesheet" type="text/css" href="{% static 'projects/style.css' %}">
+            <link href="{% static 'projects/css/styles.css' %}" rel="stylesheet">
             <!--encodage qui permet d'écrire tout les caractères du monde-->
             <title>{% block title %} {% endblock title%}</title>
         </head>
     {%endblock head%}
+
     <body>
     {%block header%}
         <header>
             <div class="header">
-                <h1>My dear diary,</h1>
+                <h1> My dear diary, </h1>
                 <p>From a Python Developer</p>
             </div>
         </header>

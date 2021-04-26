@@ -7,7 +7,7 @@ def land_page(request):
     return render(request, 'projects/landing.html')
 
 
-def project_home(request):
+def home(request):
     projects_found = Project.objects.all()
     context = {
         'projects_found':projects_found,
