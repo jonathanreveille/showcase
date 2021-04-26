@@ -1,0 +1,50 @@
+.header{
+    padding: 20px;
+    text-align: center;
+    background: #1abc9c;
+    color: white;
+}
+
+.flex-banner {
+    display: flex;  
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color:rgba(0, 255, 149, 0.74);
+    height: 4rem;
+}
+
+a:hover{    
+    color:white;
+}
+
+.button{
+    padding: 0.5rem;
+}
+
+.flex-posts{
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    padding : 5rem;
+    justify-content:space-evenly;
+}
+
+@media all and (max-width: 600px) {
+    .flex-post{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+}
+
+.footer-home{
+    position:sticky;
+    text-align: center;
+    bottom: 0;
+    padding:.5rem;
+    width: 100%;
+    height: 5rem;
+    background-color: cadetblue;
+    color:cornsilk;
+}
