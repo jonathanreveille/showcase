@@ -1,0 +1,254 @@
+/* for base.html */
+
+/* Zone where My Dear Diary */
+.header{
+    padding: 0.5rem;
+    text-align: center;
+    background: #F9A12EFF;
+    color: white;
+}
+
+/* Zone with the navbar inside */
+.flex-banner {
+    display: flex;  
+    flex-direction: row-reverse;
+    justify-content:end;
+    align-items: center;
+    background-color:#FC766AFF;
+    height: 4rem;
+    position: sticky;
+    width:auto;
+}
+
+/* effects when going over the <a> in nav */
+a:hover{
+    color:white;
+}
+
+.click-content:hover{
+    color:#1abc9c;
+    background-color:honeydew;
+}
+
+.click-content{
+    padding : 0.25rem;
+    background-color: rgba(138, 168, 168, 0.274);
+    border-radius: 0.25rem;
+    display : inline-block;
+}
+
+/* buttons on the applications from the nav bar */
+.button{
+    /* color:turquoise; */
+    color:#9B4A97FF;
+    padding: 0.5rem;
+    text-decoration: none;
+}
+
+.button:hover{
+    border: 2px grey groove ;
+    background-color: turquoise;
+}
+
+/* for portfolio */
+.flex-posts{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding : 3rem;
+    justify-content:space-evenly;
+    align-items: center;
+}
+
+/* For landing page presentation */
+.flex-intro{
+    /* background-color: #EDF5E1; */
+    background-color: #FC766AFF;
+    display:flex;
+    flex-direction:column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    height: 550px;
+    color:white;
+}
+
+/* Description of myself */
+.description{
+    text-align: center;
+}
+
+/* for last updated posts in landing page */
+.flex-intro2{
+    background-color:cadetblue;
+    display:flex;
+    flex-direction:column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    height: 500px;
+}
+
+.contact-area{
+    background-color: #05386B;
+    display:flex;
+    flex-direction:column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    height: 500px;
+    color:whitesmoke;
+}
+
+/* Contact button position in landing page*/
+.center-button{
+    text-align: center;
+    padding: 2rem;
+}
+
+/* Contact button in landing page */
+.contact-button, .updates-button{
+    padding : 0.8rem;
+    background-color: turquoise;
+    border-radius: 0.25rem;
+    display : inline-block;
+    text-decoration: none;
+}
+
+@media all and (max-width: 600px) {
+    .flex-post .flex-intro{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+}
+
+/* For portfolio projects */
+.one-post{
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+    padding : 1.5rem;
+    height : 400px;
+    width : 340px;
+    margin: 15px 15px 15px 15px;
+    overflow: scroll;
+}
+
+.image-project{
+    width:290px;
+    height:250px;
+    padding-bottom : 0.5rem;
+}
+
+.project-body{
+    word-break: keep-all;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.tags{
+    padding : 0.25rem;
+    background-color: rgba(148, 199, 199, 0.274);
+    border-radius: 0.25rem;
+    display : inline-block;
+}
+
+.footer-home{
+    position:sticky;
+    text-align: center;
+    bottom: 0;
+    padding:.5rem;
+    width: 100%;
+    height: 6rem;
+    background-color: #F9A12EFF;
+    color:cornsilk;
+}
+
+.photo-detail-container{
+    padding-top: 2rem;
+}
+
+.image-detail-project{
+    height:340px;
+    width:510px;
+}
+
+.title-detail-area{
+    font-size:2.5rem;
+}
+
+.sub_title-detail-area{
+    color :grey;
+}
+
+/* 
+.logo_website{
+    width:4rem;
+    height:3.8rem;
+}
+.logo-container{
+    display:flex;
+    position:sticky;
+    margin-top :2rem;
+} */
+
+/* Trying something new */
+* {
+box-sizing: border-box;
+}
+
+/* Style the body */
+body {
+font-family: Arial;
+margin: 0;
+}
+
+.language-logo{
+    height:80px;
+}
+
+/* Header/logo Title */
+.header1 {
+padding: 18px;
+text-align: center;
+background: #9B4A97FF;
+color: white;
+}
+
+/* Style the top navigation bar */
+.navbar {
+display: flex;
+background-color: #333;
+}
+
+/* Column container */
+.row {  
+display: flex;
+flex-wrap: wrap;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+flex: 30%;
+background-color: #f1f1f1;
+padding: 20px;
+}
+
+/* Main column */
+.main {
+flex: 70%;
+background-color: white;
+padding: 20px;
+}
+    
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+.row, .navbar {   
+    flex-direction: column;
+}
+}
+
+html {
+	scroll-behavior: smooth;
+}
