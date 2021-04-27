@@ -7,9 +7,9 @@
     {% block nav %}
         <div class="flex-banner">
             <div class="navigation">
+                <a href="#news" class="button">News</a>
                 <a class="button" href="{% url 'projects:home' %}">Portfolio</a>
-                <a href="" class="button">Search</a>
-                <a href="" class="button">Contact</a>
+                <a href="" class="button">Blog</a>
             </div>
         </div>
     {% endblock nav %}
@@ -17,30 +17,86 @@
     {%block content%}
 
     <div class="flex-intro">
-        <h1>Hello, my name is Jon</h1>
-            <div class="intro-post">
-                    <p><br/>
-                    If you are here, your curiosity brought you here. And I am glad that you are here !
-                    Here's a bunch of projects I have achieved within the last two year.
-                    <br/><br/>
-                    Today, my goal, as a developer, is to find
-                    a role in a company as a junior python developer.
-                    <br/></p>
+        <div>
+            <img class="profile-avatar" src="{% static 'img/avatar_jon.png' %}">
+        </div>
+    </div>
 
-                    <div class="center-button">
-                        <a href="#contact" class="contact-button"> Contact me ! </a>
-                    </div>
-                    
+
+<!-- Header -->
+<div class="header1" id="news">
+  <h1>Latest blog posts</h1>
+</div>
+
+<!-- The flexible grid (content) -->
+<div class="row">
+  <div class="side">
+    <h2>Main Languages</h2>
+        <div>
+            <img class="language-logo" src="{% static 'img/python.png' %}">
+            <img class="language-logo" src="{% static 'img/django.png' %}">
+            <img class="language-logo" src="{% static 'img/mysql.png' %}">
+            <img class="language-logo" src="{% static 'img/postgresql.png' %}">
+            <img class="language-logo" src="{% static 'img/html.png' %}">
+            <img class="language-logo" src="{% static 'img/css.png' %}">
+        </div>
+    <p>My ultimate goal is to find a junior position as a Python Developer</p>
+
+    <h3>Other ways to find me</h3>
+
+    <div>
+        <a href="https://github.com/jonathanreveille" target='_blank'>
+            <img class="language-logo" src="{% static 'img/github.png' %}">
+        </a>
+        <a href="https://www.linkedin.com/in/jonathan-r%C3%A9veill%C3%A9/" target='_blank'>
+            <img class="language-logo" style="height:75px" src="{% static 'img/linkedin.png' %}"><br/>
+        </a>
+    </div><br>
+</div>
+
+  <div class="main">
+    <h2>TITLE HEADING</h2>
+    <h5>Title description, Dec 7, 2017</h5>
+    <div class="fakeimg" style="height:200px;">Image</div>
+    <p>Some text..</p>
+    <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+    <br>
+    <h2>TITLE HEADING</h2>
+    <h5>Title description, Sep 2, 2017</h5>
+    <div class="fakeimg" style="height:200px;">Image</div>
+    <p>Some text..</p>
+    <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+  </div>
+</div>
+
+
+{% comment %} 
+        <h1>Hello, my name is Jon</h1>
+            <p class="description">
+            If you are here, your curiosity brought you here. And I am glad that you are here !
+            Here's a bunch of projects I have achieved within the last two year.
+            <br/><br/>
+            Today, my goal, as a developer, is to find
+            a role in a company as a junior python developer.
+            </p>
+            
+                <div class="center-button">
+                    <a href="#updates-area" class="updates-button"> Latest Updates! </a>
+
+                    <a href="#contact-area" class="contact-button"> Contact me ! </a>
                 </div>
             </div>
 
-    <div class="flex-intro">
-        <div class="latest_updates">
-            <h3> Last updated posts in portfolios </h3>
-        </div>
-        <div class="intro-post">
-            <img src="">
-        </div>
+
+    <div id="updates-area" class="flex-intro2">
+        <h3> Last updated posts in portfolios </h3>
+        <h1> hello </h1>
     </div>
+
+    <div id="contact-area" class="contact-area">
+        <h3> Contact </h3>
+        <h1> If you have any questions or projects to talk about,
+        don't hesitate to reach out to me ! </h1>
+    </div> {% endcomment %}
 
     {%endblock content%}
