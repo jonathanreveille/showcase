@@ -3,7 +3,6 @@ from .models import Project, Tag
 #from .forms import SearchedProductForms
 
 # Create your views here.
-
 def land_page(request):
     return render(request, 'projects/landing.html')
 
