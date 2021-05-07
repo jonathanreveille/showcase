@@ -4,24 +4,25 @@
 
 <html lang="en">
 
-    {%block head%}
+    {% block head %}
         <head>
             <meta charset="utf-8" />
             <link href="{% static 'css/styles.css' %}" rel="stylesheet">
             <!--encodage qui permet d'écrire tout les caractères du monde-->
             <title>{% block title %} {% endblock title%}</title>
         </head>
-    {%endblock head%}
+    {% endblock head %}
 
     <body>
+
     {% block nav %}
-        <div class="flex-banner">
-            <div class="navigation">
-                <a class="button" href="{% url 'projects:land_page' %}">Intro</a>
-                <a class="button">Search</a>
-                <a class="button">Contact</a>
-            </div>
+    <div class="flex-banner">
+        <div class="navigation">
+            <a class="button" href="{% url 'projects:land_page' %}">Home</a>
+            <a class="button" href="{% url 'projects:home' %}">Portfolio</a>
+            <a class="button" href="{% url 'blog:blog_index' %}">Blog</a>
         </div>
+    </div>
     {% endblock nav %}
     
     {%block header%}
@@ -31,14 +32,14 @@
                 <p>From a Python Developer</p>
             </div>
     </header>
-    {%endblock header%}
+    {% endblock header %}
 
-    {%block content%}
+    {% block content %}
         {% comment %} Section for content here {% endcomment %}
-     {%endblock content%}
+     {% endblock content %}
         
 
-    {%block footer%}
+    {% block footer %}
         <footer> 
             <div class="footer-home">
                 <p>The website is made with framework Django 3.2 - Hosted at Digital Ocean</p>
@@ -47,7 +48,7 @@
                     <a>CV</a>
             </div>
         </footer>
-    {%endblock footer%}
+    {% endblock footer %}
     
 </body>
 </html>

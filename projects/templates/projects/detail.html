@@ -19,13 +19,11 @@
                     <h3 class="sub_title-detail-area">{{project.sub_title}}</h3>
                     <p class="body-detail-area">{{project.body}}</p>
                     <br/>
-                    <span><a class ="click-content" href="https://github.com/jonathanreveille/Live_it_Web_app_for_artist" alt="Github" target="_blank">Voir le repo</a></span>
+                    <span><a class ="click-content" href={{project.repository}} alt="Github" target="_blank">Voir le repo</a></span>
                     <span><a class ="click-content" href="{% url 'projects:home' %}">Retour projets</a></span>
                 </div>
                 
                 {% endif %}
             </div>
-
-           
 
 {% endblock content %}

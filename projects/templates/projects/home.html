@@ -2,24 +2,12 @@
 
 {% load static %}
 
-{% block title %} Portfolio Homepage {% endblock title %}
-
-    {% block nav %}
-        <div class="flex-banner">
-            <div class="navigation">
-                <a class="button" href="{% url 'projects:land_page' %}">Intro</a>
-                <a class="button">Blog</a>
-                <a class="button">Search</a>
-            </div>
-        </div>
-    {% endblock nav %}
+{% block title %} Portfolio Showcase {% endblock title %}
     
-{% block content %}
+    {% block content %}
+        <div class="flex-posts">
 
-            <div class="flex-posts">
-
-            {% for project in projects_found %}
-
+            {% for project in page_obj.object_list %}
                 <div class="one-post">
                     <div class="title">
                         <h2>{{ project.title }}</h2>
@@ -31,7 +19,7 @@
                         </a>
                     </div>
                     
-                    <div class=div_tags>
+                    <div class="div_tags">
                         {% for tag in project.tag.all %}
                             <span class="tags">{{ tag }}</span>
                         {% endfor %}
@@ -41,10 +29,26 @@
                         <p class="project-body">{{ project.sub_title }}
                         <span><a class ="click-content" href="{% url 'projects:detail' project.id %}"> More...</a></span></p>
                     </div>
-
-                    
                 </div>
             {% endfor %}
-             </div>
+        </div>
+
+        <div class="pagination">
+            <span class="step-links">
+                {% if page_obj.has_previous %}
+                    <a href="?page=1">&laquo; First</a>
+                    <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
+                {% endif %}
+
+                <span class="current">
+                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                </span>
+
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}">Next</a>
+                    <a href="?page={{ page_obj.paginator.num_pages }}">Last &raquo;</a>
+                {% endif %}
+            </span>
+        </div>
 
      {%endblock content%}

@@ -1,11 +1,25 @@
-/* for base.html */
+/* font for base.html */
+@font-face {
+    font-family: 'sinkin_sans400_regular';
+    src: url('fonts/SinkinSans-400Regular-webfont.eot');
+    src: url('fonts/SinkinSans-400Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         /* url('fonts/SinkinSans-400Regular-webfont.woff2') format('woff2'), */
+         url('fonts/SinkinSans-400Regular-webfont.woff') format('woff'),
+         url('fonts/SinkinSans-400Regular-webfont.ttf') format('truetype'),
+         url('fonts/SinkinSans-400Regular-webfont.svg#sinkin_sans400_regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
 
 /* Zone where My Dear Diary */
 .header{
+    font-family:'sinkin_sans400_regular';
     padding: 0.5rem;
     text-align: center;
     background: #F9A12EFF;
     color: white;
+    font-size:0.85rem;
 }
 
 /* Zone with the navbar inside */
@@ -21,13 +35,17 @@
 }
 
 /* effects when going over the <a> in nav */
-a:hover{
-    color:white;
+.title-link{
+    color:grey;
 }
 
-.click-content:hover{
-    color:#1abc9c;
-    background-color:honeydew;
+.title-link:hover{
+    color:#9B4A97FF;
+}
+
+.title-link-detail{
+    text-decoration: none;
+    font-size:1.05rem;
 }
 
 .click-content{
@@ -37,9 +55,12 @@ a:hover{
     display : inline-block;
 }
 
+.click-content:hover{
+    color:#1abc9c;
+}
+
 /* buttons on the applications from the nav bar */
 .button{
-    /* color:turquoise; */
     color:#9B4A97FF;
     padding: 0.5rem;
     text-decoration: none;
@@ -48,6 +69,7 @@ a:hover{
 .button:hover{
     border: 2px grey groove ;
     background-color: turquoise;
+    border-radius : 0.30rem;
 }
 
 /* for portfolio */
@@ -58,11 +80,11 @@ a:hover{
     padding : 3rem;
     justify-content:space-evenly;
     align-items: center;
+    background-color: cornsilk;
 }
 
 /* For landing page presentation */
 .flex-intro{
-    /* background-color: #EDF5E1; */
     background-color: #FC766AFF;
     display:flex;
     flex-direction:column;
@@ -73,20 +95,21 @@ a:hover{
     color:white;
 }
 
+.blog-flex-posts{
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding : 3rem;
+    justify-content:space-evenly;
+    align-items: center;
+    background-color :cornsilk;
+}
+
 /* Description of myself */
 .description{
     text-align: center;
-}
-
-/* for last updated posts in landing page */
-.flex-intro2{
-    background-color:cadetblue;
-    display:flex;
-    flex-direction:column;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-    height: 500px;
 }
 
 .contact-area{
@@ -125,19 +148,40 @@ a:hover{
 
 /* For portfolio projects */
 .one-post{
-    border: 1px solid rgba(0, 0, 0, 0.125);
-    border-radius: 0.25rem;
     padding : 1.5rem;
-    height : 400px;
-    width : 340px;
+    height : 450px;
+    width : 400px;
     margin: 15px 15px 15px 15px;
-    overflow: scroll;
+}
+
+/* For blog posts in category_detail.html */
+.category-title{
+    text-align: center;
+}
+
+@media all and (max-width: 600px) {
+    .category-title {
+        font-size: 0.7rem;
+    }
+}
+
+.blog-post-body{
+    text-align: justify;
+}
+
+.blog-post{
+    height:500px;
+    width: 560px;
+    margin: 15px;
+    padding:2rem;
+    text-align: center;
 }
 
 .image-project{
     width:290px;
     height:250px;
     padding-bottom : 0.5rem;
+    border-radius: 1rem;
 }
 
 .project-body{
@@ -151,18 +195,42 @@ a:hover{
     background-color: rgba(148, 199, 199, 0.274);
     border-radius: 0.25rem;
     display : inline-block;
+    font-size: 0.6rem;
 }
 
 .footer-home{
+    font-size: 1rem;
     position:sticky;
     text-align: center;
     bottom: 0;
-    padding:.5rem;
+    padding-top:1rem;
+    padding-bottom:1rem;
     width: 100%;
-    height: 6rem;
-    background-color: #F9A12EFF;
+    height: 8rem;
+    background-color:rgba(127, 125, 125, 0.752);
     color:cornsilk;
 }
+
+.title-detail-container{
+    width:500px;
+    font-size: 1rem;
+}
+
+.body-detail-area {
+    width: 500px;
+    text-align:justify;
+}
+
+.post-body-detail-area {
+    width: 750px;
+    text-align:justify;
+}
+
+.post-body-detail{
+    word-break:break-all;
+    overflow-wrap: break-word;
+}
+
 
 .photo-detail-container{
     padding-top: 2rem;
@@ -171,6 +239,7 @@ a:hover{
 .image-detail-project{
     height:340px;
     width:510px;
+    border-radius: 2rem;
 }
 
 .title-detail-area{
@@ -181,65 +250,61 @@ a:hover{
     color :grey;
 }
 
-/* 
-.logo_website{
-    width:4rem;
-    height:3.8rem;
-}
-.logo-container{
-    display:flex;
-    position:sticky;
-    margin-top :2rem;
-} */
-
-/* Trying something new */
+/* Layout for landing page and 
+blog index side of the application*/
 * {
-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 /* Style the body */
 body {
-font-family: Arial;
-margin: 0;
+    font-family: 'sinkin_sans400_regular';
+    margin: 0;
 }
 
 .language-logo{
-    height:80px;
+    height:85px;
+    text-decoration: none;
+}
+
+
+.front-language-logo{
+    height: 81px;
 }
 
 /* Header/logo Title */
 .header1 {
-padding: 18px;
-text-align: center;
-background: #9B4A97FF;
-color: white;
+    padding: 8px;
+    text-align: center;
+    background: #9B4A97FF;
+    color: white;
 }
 
 /* Style the top navigation bar */
 .navbar {
-display: flex;
-background-color: #333;
+    display: flex;
+    background-color: #333;
 }
 
 /* Column container */
 .row {  
-display: flex;
-flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 /* Create two unequal columns that sits next to each other */
 /* Sidebar/left column */
 .side {
-flex: 30%;
-background-color: #f1f1f1;
-padding: 20px;
+    flex: 30%;
+    background-color: #f1f1f1;
+    padding: 20px;
 }
 
 /* Main column */
 .main {
-flex: 70%;
-background-color: white;
-padding: 20px;
+    flex: 70%;
+    background-color: white;
+    padding: 20px;
 }
     
 /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
@@ -251,4 +316,23 @@ padding: 20px;
 
 html {
 	scroll-behavior: smooth;
+}
+
+/* blog part */
+
+.blog-category-icon{
+    height:20px;
+}
+
+.image-blog{
+    height: 150px;
+    width:160px;
+}
+
+/* Pagination */
+.pagination{
+    background-color:#F9A12EFF;
+    border : 1px black solid;
+    text-align: center;
+    padding : 0.4rem;
 }
