@@ -5,17 +5,17 @@
 {% block title %} Welcome ! {% endblock title %}
 
  
-    {% block nav %}
-        <div class="flex-banner">
-            <div class="navigation">
-                <a href="#news" class="button">News</a>
-                <a class="button" href="{% url 'projects:home' %}">Portfolio</a>
-                <a class="button" href="{% url 'blog:blog_index' %}">Blog</a>
-            </div>
+{% block nav %}
+    <div class="flex-banner">
+        <div class="navigation">
+            <a href="#news" class="button">News</a>
+            <a class="button" href="{% url 'projects:home' %}">Portfolio</a>
+            <a class="button" href="{% url 'blog:blog_index' %}">Blog</a>
         </div>
-    {% endblock nav %}
+    </div>
+{% endblock nav %}
  
-    {%block content%}
+{%block content%}
 
     <div class="flex-intro">
         <div>
@@ -24,77 +24,77 @@
     </div>
 
 
-<!-- Header -->
-<div class="header1" id="news">
-  <h1>Latest blog posts</h1>
-</div>
+    <!-- Header -->
+    <div class="header1" id="news">
+    <h1>Latest blog posts</h1>
+    </div>
 
-<!-- The flexible grid (content) -->
-<div class="row">
-  <div class="side">
-    <h2>Main Languages</h2>
+    <!-- The flexible grid (content) -->
+    <div class="row">
+    <div class="side">
+        <h2>Main Languages</h2>
+                <br/>
+            <div>
+                <img class="language-logo" src="{% static 'img/python.png' %}">
+                <img class="language-logo" src="{% static 'img/django.png' %}">
+                <img class="language-logo" src="{% static 'img/mysql.png' %}">
+                <img class="language-logo" src="{% static 'img/postgresql.png' %}">
+                <img class="front-language-logo" src="{% static 'img/html.png' %}">
+                <img class="language-logo" src="{% static 'img/css.png' %}">
+            </div>
             <br/>
-        <div>
-            <img class="language-logo" src="{% static 'img/python.png' %}">
-            <img class="language-logo" src="{% static 'img/django.png' %}">
-            <img class="language-logo" src="{% static 'img/mysql.png' %}">
-            <img class="language-logo" src="{% static 'img/postgresql.png' %}">
-            <img class="front-language-logo" src="{% static 'img/html.png' %}">
-            <img class="language-logo" src="{% static 'img/css.png' %}">
-        </div>
+        <p>My ultimate goal is to find a junior position as a Python Developer</p>
         <br/>
-    <p>My ultimate goal is to find a junior position as a Python Developer</p>
-    <br/>
-    <h2>Other ways to find me</h2>
+        <h2>Other ways to find me</h2>
 
-    <div>
-        <a href="https://github.com/jonathanreveille" target='_blank'>
-            <img class="language-logo" src="{% static 'img/github.png' %}">
-        </a>
-        <a href="https://www.linkedin.com/in/jonathan-r%C3%A9veill%C3%A9/" target='_blank'>
-            <img class="language-logo" style="height:75px" src="{% static 'img/linkedin.png' %}"><br/>
-        </a>
+        <div>
+            <a href="https://github.com/jonathanreveille" target='_blank'>
+                <img class="language-logo" src="{% static 'img/github.png' %}">
+            </a>
+            <a href="https://www.linkedin.com/in/jonathan-r%C3%A9veill%C3%A9/" target='_blank'>
+                <img class="language-logo" style="height:75px" src="{% static 'img/linkedin.png' %}"><br/>
+            </a>
 
-    </div>
-    
-    <br>
-
-    <br/><br/>
-
-    <a class="button" href="{% url 'projects:home' %}">Project showcase here</a>
-
-    <br/><br/>
-
-</div>
-
-  <div class="main">
-
-    {% for post in posts %}
-    <div class="title-click">
-        <a class='title-link-detail' href="{% url 'blog:blog_detail' post.id%}">
-            <h2 class="title-link">{{post.title}}</h2>
-        </a>
-    </div>
-
-        <h5>{{post.created_on.date}}</h5>
-
-        {% for category in post.categories.all %}
-            <a href="{% url 'blog:blog_category' category.name %}">
-            <img class="blog-category-icon" src="{% static 'img' %}/{{ category.name }}.png"></a>
-                {{ category.name }}
-            </a>&nbsp;
-        {% endfor %}
-
-        {% comment %} <div class="fakeimg" style="height:200px;">Image</div> {% endcomment %}
-
-        <p>{{post.body | slice:":250"}}
-        <a class="click-content" href="{% url 'blog:blog_detail' post.id%}">More..</a>
-        </p>
+        </div>
+        
         <br>
-    {% endfor %}
-       <a class="button" href="{% url 'blog:blog_index' %}">More blog posts</a>
-  </div>
-</div>
+
+        <br/><br/>
+
+        <a class="button" href="{% url 'projects:home' %}">Project showcase here</a>
+
+        <br/><br/>
+
+    </div>
+
+    <div class="main">
+
+        {% for post in posts %}
+        <div class="title-click">
+            <a class='title-link-detail' href="{% url 'blog:blog_detail' post.id%}">
+                <h2 class="title-link">{{post.title}}</h2>
+            </a>
+        </div>
+
+            <h5>{{post.created_on.date}}</h5>
+
+            {% for category in post.categories.all %}
+                <a href="{% url 'blog:blog_category' category.name %}">
+                <img class="blog-category-icon" src="{% static 'img' %}/{{ category.name }}.png"></a>
+                    {{ category.name }}
+                </a>&nbsp;
+            {% endfor %}
+
+            {% comment %} <div class="fakeimg" style="height:200px;">Image</div> {% endcomment %}
+
+            <p>{{post.body | slice:":250"}}
+            <a class="click-content" href="{% url 'blog:blog_detail' post.id%}">More..</a>
+            </p>
+            <br>
+        {% endfor %}
+        <a class="button" href="{% url 'blog:blog_index' %}">More blog posts</a>
+    </div>
+    </div>
 
 
-    {%endblock content%}
+{%endblock content%}

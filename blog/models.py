@@ -2,6 +2,8 @@ from django.db import models
 from .managers import PostManager
 
 # Create your models here.
+
+
 class Category(models.Model):
     """category table"""
 
@@ -10,6 +12,7 @@ class Category(models.Model):
     def __str__(self):
         """return the name in str of the object"""
         return self.name
+
 
 class Post(models.Model):
     """post table"""
@@ -28,5 +31,5 @@ class Post(models.Model):
 
     class Meta:
         """for order the objects base on an attribute"""
-        
+
         ordering = ['-created_on']

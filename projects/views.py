@@ -6,11 +6,13 @@ from blog.models import Post
 #from .forms import SearchedProductForms
 
 # Create your views here.
+
+
 def land_page(request):
     """landing page views"""
     posts = Post.objects.all().order_by('-created_on')[:2]
     context = {
-        'posts':posts
+        'posts': posts
     }
     return render(request, 'projects/landing.html', context)
 
@@ -24,11 +26,12 @@ def home(request):
     page_obj = Project.objects.create_paginator(projects_found, 3, request)
 
     context = {
-        'projects_found':projects_found,
+        'projects_found': projects_found,
         'page_obj': page_obj,
     }
 
     return render(request, 'projects/home.html', context)
+
 
 def detail(request, project_pk):
     project = get_object_or_404(Project, pk=project_pk)
@@ -36,6 +39,7 @@ def detail(request, project_pk):
         'project': project,
     }
     return render(request, 'projects/detail.html', context)
+
 
 def search(request):
     pass

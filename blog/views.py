@@ -19,13 +19,14 @@ def blog_index(request):
 
     return render(request, 'blog/blog_index.html', context)
 
-def blog_detail(request,post_id):
+
+def blog_detail(request, post_id):
     """method to see detail of a blog post"""
 
     posts = get_object_or_404(Post, pk=post_id)
 
     context = {
-        'posts':posts,
+        'posts': posts,
     }
     return render(request, 'blog/blog_detail.html', context)
 
@@ -33,13 +34,13 @@ def blog_detail(request,post_id):
 def blog_category(request, category):
     """method to retrieve blogs posts
     with a specific category field"""
-    
+
     posts = Post.objects.filter(
         categories__name__contains=category).order_by('-created_on')
-    
+
     context = {
-        'category' : category,
-        'posts' : posts
+        'category': category,
+        'posts': posts
     }
 
     return render(request, 'blog/blog_category.html', context)
@@ -55,7 +56,7 @@ def blog_category(request, category):
 #             category = form.cleaned_data.get("query_search")
 #             posts = Post.objects.filter(
 #                 categories__name__contains=category).order_by('-created_on')
-            
+
 #             context = {
 #                 'category' : category,
 #                 'posts' : posts

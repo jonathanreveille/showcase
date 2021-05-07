@@ -6,24 +6,24 @@
 
 {%block content%}
 
-            <div class="flex-posts">
-            
-                {% if project %}
+    <div class="flex-posts">
+    
+        {% if project %}
 
-                <div class="photo-detail-container">
-                    <img class="image-detail-project" src="{{project.image}}">
-                </div>
+        <div class="photo-detail-container">
+            <img class="image-detail-project" src="{{project.image}}">
+        </div>
 
-                <div class="title-detail-container">
-                    <h1 class="title-detail-area">{{project.title}}</h1>
-                    <h3 class="sub_title-detail-area">{{project.sub_title}}</h3>
-                    <p class="body-detail-area">{{project.body}}</p>
-                    <br/>
-                    <span><a class ="click-content" href={{project.repository}} alt="Github" target="_blank">Voir le repo</a></span>
-                    <span><a class ="click-content" href="{% url 'projects:home' %}">Retour projets</a></span>
-                </div>
-                
-                {% endif %}
-            </div>
+        <div class="title-detail-container">
+            <h1 class="title-detail-area">{{project.title}}</h1>
+            <h3 class="sub_title-detail-area">{{project.sub_title}}</h3>
+            <p class="body-detail-area">{{project.body}}</p>
+            <br/>
+            <span><a class ="click-content" href={{project.repository}} alt="Github" target="_blank">Voir le repo</a></span>
+            <span><a class ="click-content" href="{% url 'projects:home' %}">Retour projets</a></span>
+        </div>
+        
+        {% endif %}
+    </div>
 
 {% endblock content %}

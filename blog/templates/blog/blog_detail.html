@@ -5,6 +5,7 @@
 {% block title %} Blog detail {% endblock title %}
 
 {% block nav %}
+
     <div class="flex-banner">
         <div class="navigation">
             <a class="button" href="{% url 'projects:land_page' %}">Home</a>
@@ -12,6 +13,7 @@
             <a class="button" href="{% url 'blog:blog_index' %}">Blog</a>
         </div>
     </div>
+
 {% endblock nav %}
 
 {% block content %}
@@ -36,5 +38,6 @@
             </code>
     {% endif %}
 </div>
+
 {% endblock content %}
     

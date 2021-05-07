@@ -1,8 +1,8 @@
 from django import db
 from . import models
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
-    
-    
+
+
 class PostManager(db.models.Manager):
 
     def create_paginator(self, post_found, per_page, request):

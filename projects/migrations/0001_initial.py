@@ -14,16 +14,19 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Tag',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.BigAutoField(auto_created=True,
+                 primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=100)),
             ],
         ),
         migrations.CreateModel(
             name='Project',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.BigAutoField(auto_created=True,
+                 primary_key=True, serialize=False, verbose_name='ID')),
                 ('title', models.CharField(max_length=200)),
-                ('sub_title', models.CharField(blank=True, max_length=150, null=True)),
+                ('sub_title', models.CharField(
+                    blank=True, max_length=150, null=True)),
                 ('body', models.TextField(blank=True, null=True)),
                 ('image', models.FilePathField(blank=True, null=True, path='/img')),
                 ('created', models.DateTimeField(auto_now_add=True)),

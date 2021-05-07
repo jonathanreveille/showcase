@@ -63,10 +63,8 @@
                     {{ category.name }}
                 </a>&nbsp;
             {% endfor %}
-
+            
         {% comment %} <div class="fakeimg" style="height:200px;">Image</div> {% endcomment %}
-        
-
         <p>{{post.body | slice:":150"}}...<a class="click-content" href="{% url 'blog:blog_detail' post.id%}">More..</a></p>
 
 
@@ -74,7 +72,7 @@
     {% endfor %}
 
     </div>
-    </div>
+</div>
 
         <div class="pagination">
             <span class="step-links">

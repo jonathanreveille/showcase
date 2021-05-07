@@ -2,6 +2,8 @@ from django.db import models
 from .managers import ProjectManager
 
 # Create your models here.
+
+
 class Tag(models.Model):
     """tag table"""
 
@@ -10,6 +12,7 @@ class Tag(models.Model):
     def __str__(self):
         "returns the name in str of the object"
         return self.name
+
 
 class Project(models.Model):
     """project table"""
@@ -27,9 +30,8 @@ class Project(models.Model):
         """returns the title in str of the object"""
         return self.title
 
-
     class Meta:
         """Allows to order the object based
         on the attribute"""
 
-        ordering=['-created']
+        ordering = ['-created']
