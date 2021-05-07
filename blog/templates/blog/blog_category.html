@@ -1,0 +1,128 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %} Post by category {% endblock title %}
+
+{% block nav %}
+    <div class="flex-banner">
+        <div class="navigation">
+            <a class="button" href="{% url 'projects:land_page' %}">Home</a>
+            <a class="button" href="{% url 'projects:home' %}">Portfolio</a>
+            <a class="button" href="{% url 'blog:blog_index' %}">Blog</a>
+        </div>
+    </div>
+
+{% endblock nav %}
+
+{% block content %}
+    <div class="category-title">
+        <h1 >Blog category : {{ category | title }}</h1>
+    </div>
+    <hr>
+
+    <div class="flex-posts">
+        {% for post in posts %}
+            <div class="blog-post">
+                <div class="title">
+                    <h2><a href="{% url 'blog:blog_detail' post.id%}">{{ post.title }}</a></h2>
+                </div>
+            <small>
+                {{ post.created_on.date }} |&nbsp;
+                Categories:&nbsp;
+                {% for category in post.categories.all %}
+                <a href="{% url 'blog:blog_category' category.name %}">
+                    {{ category.name }}</a>&nbsp;
+                {% endfor %}
+            </small>
+                <div class="body-container">
+                    <p class="blog-post-body">{{ post.body | slice:":200" }}...</p>
+                </div>
+            </div>
+        {% endfor %}
+</div>
+
+{% endblock content %}
+
+{% comment %} 
+{% block content %}
+
+<!-- The flexible grid (content) -->
+<div class="row">
+  <div class="side">
+
+    <h2>Main Languages</h2>
+        <div>
+            <img class="language-logo" src="{% static 'img/python.png' %}">
+            <img class="language-logo" src="{% static 'img/django.png' %}">
+            <img class="front-language-logo" src="{% static 'img/html.png' %}">
+            <img class="language-logo" src="{% static 'img/css.png' %}">
+        </div>
+        <br/>
+    <p> Here are some articles about tricky situations I had to carry on while coding </p>
+    <br/>
+    <h3>Other ways to find me</h3>
+
+    <div>
+        <a href="https://github.com/jonathanreveille" target='_blank'>
+            <img class="language-logo" src="{% static 'img/github.png' %}">
+        </a>
+        <a href="https://www.linkedin.com/in/jonathan-r%C3%A9veill%C3%A9/" target='_blank'>
+            <img class="language-logo" style="height:75px" src="{% static 'img/linkedin.png' %}"><br/>
+        </a>
+
+    </div><br>
+
+    <br/><br/>
+
+    <a class="button" href="{% url 'projects:home' %}">Project showcase here</a>
+
+</div>
+
+  <div class="main">
+
+    {% for post in page_obj.object_list %}
+        <div class="title-click">
+            <a class="title-link-detail" href="{% url 'blog:blog_detail' post.id%}">
+                <h2 class="title-link">{{ post.title }}</h2>
+            </a>
+        </div>
+
+        <h5>{{post.created_on.date}}</h5>
+
+        {% for category in post.categories.all %}
+            <a href="{% url 'blog:blog_category' category.name %}">
+            <img class="blog-category-icon" src="{% static 'img' %}/{{ category.name }}.png"></a>
+                {{ category.name }}
+            </a>&nbsp;
+        {% endfor %} {% endcomment %}
+
+        {% comment %} <div class="fakeimg" style="height:200px;">Image</div> {% endcomment %}
+
+        {% comment %} <p>{{post.body | slice:":150"}}...<a class="click-content" href="{% url 'blog:blog_detail' post.id%}">More..</a></p>
+
+        <br>
+    {% endfor %}
+
+    </div>
+    </div>
+
+        <div class="pagination">
+            <span class="step-links">
+                {% if page_obj.has_previous %}
+                    <a href="?page=1">&laquo; First</a>
+                    <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
+                {% endif %}
+
+                <span class="current">
+                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                </span>
+
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}">Next</a>
+                    <a href="?page={{ page_obj.paginator.num_pages }}">Last &raquo;</a>
+                {% endif %}
+            </span>
+        </div>
+
+{% endblock content %} {% endcomment %}
