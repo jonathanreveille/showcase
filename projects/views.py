@@ -1,9 +1,8 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator
 
-from .models import Project, Tag
+from .models import Project
 from blog.models import Post
-#from .forms import SearchedProductForms
 
 # Create your views here.
 
@@ -18,9 +17,8 @@ def land_page(request):
 
 
 def home(request):
-    """showcase of projects, 
-    pagination will show only 3 projects
-    per pages"""
+    """showcase of projects, pagination will
+    show only 3 projects per pages"""
 
     projects_found = Project.objects.all()
     page_obj = Project.objects.create_paginator(projects_found, 3, request)
